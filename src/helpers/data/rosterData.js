@@ -5,7 +5,7 @@ const dbURL = firebaseConfig.databaseURL;
 
 const getPlayers = () => new Promise((resolve, reject) => {
   axios.get(`${dbURL}/players.json`)
-    .then((response) => resolve(response.data))
+    .then((response) => resolve((Object.values(response.data || {}))))
     .catch((error) => reject(error));
 });
 
