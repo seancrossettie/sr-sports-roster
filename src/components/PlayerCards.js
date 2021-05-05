@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { deletePlayer } from '../helpers/data/rosterData';
+import PlayerForm from './PlayerForm';
 
 const useStyles = makeStyles({
   root: {
@@ -69,9 +70,14 @@ const PlayerCard = ({
           Delete
         </Button>
       </CardActions>
-        {editing
-          && <Typography>Edit Form</Typography>
-        }
+        {editing && <PlayerForm
+          formTitle={'Edit Player Info'}
+          setPlayers={setPlayers}
+          firebaseKey={firebaseKey}
+          imageUrl={imageUrl}
+          name={name}
+          position={position}
+        />}
     </Card>
   );
 };
