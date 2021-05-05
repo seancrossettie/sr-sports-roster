@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Grid } from '@material-ui/core';
 import PlayerCard from '../components/PlayerCards';
 
 function Roster({ players, setPlayers }) {
   return (
-    <div>
-      {players.map((player) => (
-        <PlayerCard
-          key={player.firebaseKey}
-          {...player}
-          setPlayers={setPlayers}
-        />
-      ))}
-    </div>
+    <Grid container>
+      <Grid item direction="column" sm={2}/>
+        <Grid container direction="row" justify="space-evenly" sm={8} spacing={4}>
+        {players.map((player) => (
+          <Grid item key={player.firebaseKey}>
+            <PlayerCard
+              {...player}
+              setPlayers={setPlayers}
+            />
+          </Grid>
+        ))}
+        </Grid>
+      <Grid item direction="column" sm={2}/>
+    </Grid>
   );
 }
 
