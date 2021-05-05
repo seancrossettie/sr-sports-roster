@@ -113,7 +113,6 @@ const Header = (props) => {
 
 Header.propTypes = {
   history: PropTypes.object.isRequired,
-  user: PropTypes.any
 };
 
 export default withRouter(Header);

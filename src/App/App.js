@@ -4,7 +4,6 @@ import 'firebase/auth';
 import { getPlayers } from '../helpers/data/rosterData';
 import Header from '../components/Header';
 import Routes from '../helpers/Routes';
-import Login from '../views/Login';
 import './App.scss';
 
 function App() {
@@ -34,12 +33,11 @@ function App() {
   return (
     <>
       <Header />
-      {user
-        ? <>
-          <Routes players={players} setPlayers={setPlayers} />
-          </>
-        : <Login />
-      }
+            <Routes
+              players={players}
+              user={user}
+              setPlayers={setPlayers}
+            />
     </>
   );
 }
