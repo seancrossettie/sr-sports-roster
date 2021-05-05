@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import Header from '../components/Header';
 import Routes from '../helpers/Routes';
 import Login from '../views/Login';
 import './App.scss';
-import { signOutUser } from '../helpers/auth';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,14 +29,13 @@ function App() {
   return (
     <>
       <Routes />
+      <Header />
       {user
         ? <>
           <Typography variant='h1'>You Are Logged In</Typography>
-          <Button onClick={signOutUser}>Sign Out</Button>
-          </>
+        </>
         : <Login />
       }
-
     </>
   );
 }
