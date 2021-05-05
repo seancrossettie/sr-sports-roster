@@ -1,18 +1,9 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
-import { signInUser } from '../helpers/auth';
+import { Typography } from '@material-ui/core';
 
 const Login = () => (
     <div>
-      <Typography variant='h3'>Login with Google Below</Typography>
-      <Button
-        onClick={signInUser}
-        color='secondary'
-        variant='contained'
-        size='large'
-      >
-        Login
-      </Button>
+      <Typography variant='h1'>Login with Google</Typography>
     </div>
 );
 
