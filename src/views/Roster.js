@@ -4,18 +4,15 @@ import PlayerCard from '../components/PlayerCards';
 
 function Roster({ players, setPlayers }) {
   return (
-    <>
+    <div>
       {players.map((player) => (
         <PlayerCard
           key={player.firebaseKey}
-          firebaseKey={player.firebaseKey}
-          imageUrl={player.imageUrl}
-          name={player.name}
-          position={player.position}
+          {...player}
           setPlayers={setPlayers}
         />
       ))}
-    </>
+    </div>
   );
 }
 

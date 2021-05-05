@@ -1,10 +1,18 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
+import PropTypes from 'prop-types';
+import PlayerForm from '../components/PlayerForm';
 
-export default function AddPlayer() {
+export default function AddPlayer({ setPlayers }) {
   return (
     <>
-      <Typography>Add Players Page</Typography>
+      <PlayerForm
+        setPlayers={setPlayers}
+        formTitle={'Add a Player'}
+      />
     </>
   );
 }
+
+AddPlayer.propTypes = {
+  setPlayers: PropTypes.func.isRequired
+};
