@@ -81,8 +81,8 @@ const Header = (props) => {
                 onClose={() => handleMenuClick(null)}
               >
                 <MenuItem onClick={() => handleMenuClick('/')}>Home</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/add-authors/')}>Add Author</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/authors/')}>Authors</MenuItem>
+                <MenuItem onClick={() => handleMenuClick('/add-players/')}>Add Players</MenuItem>
+                <MenuItem onClick={() => handleMenuClick('/Roster/')}>Roster</MenuItem>
               </Menu>
             </div>
         )}
