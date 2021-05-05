@@ -21,13 +21,14 @@ const PlayerForm = ({
   position,
   setPlayers
 }) => {
-  const classes = useStyles();
   const [player, setPlayer] = useState({
     firebaseKey: firebaseKey || null,
     imageUrl: imageUrl || '',
     name: name || '',
     position: position || '',
   });
+
+  const classes = useStyles();
 
   const handleInputChange = (e) => {
     setPlayer((prevState) => ({
@@ -40,10 +41,10 @@ const PlayerForm = ({
     e.preventDefault();
     if (player.firebaseKey) {
       updatePlayer(player)
-        .then((arr) => setPlayers(arr));
+        .then(setPlayers);
     } else {
       createPlayer(player)
-        .then((array) => setPlayer(array));
+        .then(setPlayers);
     }
   };
 
