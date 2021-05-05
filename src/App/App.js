@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import './App.scss';
+import { Typography, Button } from '@material-ui/core';
 import Routes from '../helpers/Routes';
+import Login from '../views/Login';
+import './App.scss';
+import { signOutUser } from '../helpers/auth';
 
 function App() {
-  // This hook maintains state of user in app, the absense of which resulting in the state of null
   const [user, setUser] = useState(null);
 
-  // Authentication for Firebase on initial render
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
@@ -28,7 +29,14 @@ function App() {
   return (
     <>
       <Routes />
-      <h1>React Template</h1>
+      {user
+        ? <>
+          <Typography variant='h1'>You Are Logged In</Typography>
+          <Button onClick={signOutUser}>Sign Out</Button>
+          </>
+        : <Login />
+      }
+
     </>
   );
 }
