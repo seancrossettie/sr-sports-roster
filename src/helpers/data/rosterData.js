@@ -10,7 +10,7 @@ const getPlayers = () => new Promise((resolve, reject) => {
 });
 
 const createPlayer = (playerObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbURL}/players.json`, playerObj)
+  axios.post(`${dbURL}/players.json`, playerObj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbURL}/players/${response.data.name}.json`, body)
@@ -21,7 +21,7 @@ const createPlayer = (playerObj) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const deletePlayer = (firebaseKey) => new Promise((reject, resolve) => {
+const deletePlayer = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbURL}/players/${firebaseKey}.json`)
     .then(() => {
       getPlayers().then(resolve);

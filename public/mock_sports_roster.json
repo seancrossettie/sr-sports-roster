@@ -1,0 +1,59 @@
+{
+  "-MVszotOEsCYRuAkNxZD" : {
+    "firebaseKey" : "-MVszotOEsCYRuAkNxZD",
+    "imageUrl" : "https://images.thestar.com/LrEOXBlg5vwmKAYTAYI5WXaOeaM=/1200x883/smart/filters:cb(1581013026214)/https://www.thestar.com/content/dam/thestar/entertainment/movies/2020/01/21/when-laura-dern-took-a-chance-on-a-satirical-film-with-a-rookie-director/lauradern.jpg",
+    "name" : "Dr. Ellie Sattler",
+    "position" : "Paleobotanist",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MVt-yMUggtGQrkmb8Hc" : {
+    "firebaseKey" : "-MVt-yMUggtGQrkmb8Hc",
+    "imageUrl" : "https://deadline.com/wp-content/uploads/2017/04/rexfeatures_5886121s.jpg",
+    "name" : "Dr. Ian Malcolm",
+    "position" : "Mathematician",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MVt2ZL1Hjo8nxMzlVjp" : {
+    "firebaseKey" : "-MVt2ZL1Hjo8nxMzlVjp",
+    "imageUrl" : "http://www.fedoras.com/blog/wp-content/uploads/2015/06/Alan-Grant-Jurassic-Park-Hat.png",
+    "name" : "Alan Grant",
+    "position" : "Paleontologist",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MVt3QDOlHSJtXgsMvxu" : {
+    "firebaseKey" : "-MVt3QDOlHSJtXgsMvxu",
+    "imageUrl" : "https://www.jurassic-pedia.com/wp-content/uploads/2011/03/hammond_1.png",
+    "name" : "John Hammond",
+    "position" : "CEO of Jurassic Park",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MVt40RwwNPooZ4izd9y" : {
+    "firebaseKey" : "-MVt40RwwNPooZ4izd9y",
+    "imageUrl" : "https://images.squarespace-cdn.com/content/v1/576a19ba46c3c4a46ff5bb79/1542643717545-AZK68JGE2I3A2X4XK3YX/ke17ZwdGBToddI8pDm48kFMpOcZHlTq_w4NItl336vZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxZY5_tqj_k7S_qX7Glx3bDNV9sTtSXAgERKXdJKnhEgDDCg2nVq__Y5YORjujND-k/dennisnedry.jpg",
+    "name" : "Dennis Nedry",
+    "position" : "Computer Programmer",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MXnq6KlQ2uOyQ9P8UBN" : {
+    "firebaseKey" : "-MXnq6KlQ2uOyQ9P8UBN",
+    "imageUrl" : "https://eaglepost.org/wp-content/uploads/2013/12/coach.jpg",
+    "name" : "Sean Rossettie",
+    "position" : "Dog Walker",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MXnqOB7qcWKReip-IGA" : {
+    "firebaseKey" : "-MXnqOB7qcWKReip-IGA",
+    "imageUrl" : "https://3avvqt6h8wtpjjb51sk4afza-wpengine.netdna-ssl.com/wp-content/uploads/IMG_1318-1-1.jpg",
+    "name" : "Diet Seth Rogen",
+    "position" : "Something",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+  },
+  "-MXnqatiL7R8B_mI_vx5" : {
+    "firebaseKey" : "-MXnqatiL7R8B_mI_vx5",
+    "imageUrl" : "https://www.washington.edu/doit/sites/default/files/uploads/images/12-2009h.jpg",
+    "name" : "Chill dude",
+    "position" : "A guy",
+    "uid" : "Yy1q8KFHV3RHruIX0EZBg6ME71p1"
+    
+  }
+}
