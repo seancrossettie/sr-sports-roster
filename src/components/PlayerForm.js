@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Button, Grid } from '@material-ui/core';
+import {
+  TextField, Button, Grid, Typography
+} from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { createPlayer, updatePlayer } from '../helpers/data/rosterData';
 
@@ -19,6 +21,7 @@ const PlayerForm = ({
   imageUrl,
   name,
   position,
+  number,
   setPlayers
 }) => {
   const [player, setPlayer] = useState({
@@ -26,6 +29,7 @@ const PlayerForm = ({
     imageUrl: imageUrl || '',
     name: name || '',
     position: position || '',
+    number: number || '',
   });
 
   const classes = useStyles();
@@ -53,7 +57,9 @@ const PlayerForm = ({
       <Grid container direction='row'>
           <Grid container direction='column'>
             <Grid item>
-              <h2>{formTitle}</h2>
+            <Typography gutterBottom variant="h5" component="h2">
+              {formTitle}
+            </Typography>
             </Grid>
         <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Grid item>
@@ -68,26 +74,37 @@ const PlayerForm = ({
           />
           </Grid>
           <Grid item>
-          <TextField
-            label="Image Url"
-            variant="outlined"
-            name='imageUrl'
-            type='url'
-            value={player.imageUrl}
-            onChange={handleInputChange}
-            required
-          />
+            <TextField
+              label="Image Url"
+              variant="outlined"
+              name='imageUrl'
+              type='url'
+              value={player.imageUrl}
+              onChange={handleInputChange}
+              required
+            />
           </Grid>
           <Grid item>
-          <TextField
-            label="Position"
-            variant="outlined"
-            name='position'
-            type='text'
-            value={player.position}
-            onChange={handleInputChange}
-            required
-          />
+            <TextField
+              label="Position"
+              variant="outlined"
+              name='position'
+              type='text'
+              value={player.position}
+              onChange={handleInputChange}
+              required
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Number"
+              variant="outlined"
+              name='number'
+              type='text'
+              value={player.number}
+              onChange={handleInputChange}
+              required
+            />
           </Grid>
           <Button type='submit'>Submit</Button>
         </form>
@@ -104,6 +121,7 @@ PlayerForm.propTypes = {
   firebaseKey: PropTypes.string,
   imageUrl: PropTypes.string,
   name: PropTypes.string,
+  number: PropTypes.number,
   position: PropTypes.string
 };
 export default PlayerForm;

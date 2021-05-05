@@ -13,19 +13,20 @@ import PlayerForm from './PlayerForm';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 345,
+    minHeight: 460
   },
   media: {
-    height: 140,
+    height: 300,
   },
 });
 
 const PlayerCard = ({
-  // formTitle,
   firebaseKey,
   imageUrl,
   name,
   position,
+  number,
   setPlayers
 }) => {
   const [editing, setEditing] = useState(false);
@@ -47,47 +48,51 @@ const PlayerCard = ({
 
   return (
     <Card className={classes.root} key={firebaseKey}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={imageUrl}
-          title={name}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              {position}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary" onClick={() => handleButtonClick('edit')}>
-          Edit
-        </Button>
-        <Button size="small" color="primary" onClick={() => handleButtonClick('delete')}>
-          Delete
-        </Button>
-      </CardActions>
-        {editing && <PlayerForm
+      {editing
+        ? <PlayerForm
           formTitle={'Edit Player Info'}
           setPlayers={setPlayers}
           firebaseKey={firebaseKey}
           imageUrl={imageUrl}
           name={name}
           position={position}
-        />}
+          />
+        : <>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={imageUrl}
+                title={name}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {position} number: {number}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary" onClick={() => handleButtonClick('edit')}>
+              Edit
+            </Button>
+            <Button size="small" color="primary" onClick={() => handleButtonClick('delete')}>
+              Delete
+            </Button>
+          </CardActions>
+        </>
+      }
     </Card>
   );
 };
 
 PlayerCard.propTypes = {
-  // formTitle: PropTypes.string.isRequired,
   firebaseKey: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
   setPlayers: PropTypes.func.isRequired
 };
 

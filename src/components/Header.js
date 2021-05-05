@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { withRouter } from 'react-router-dom';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -32,6 +33,8 @@ const Header = (props) => {
   const classes = useStyles();
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const mobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
   const open = Boolean(anchorEl);
 
   const handleChange = (event) => {
@@ -86,10 +89,12 @@ const Header = (props) => {
               </Menu>
             </div>
         )}
-          <Typography variant="h6" className={classes.title}>
-            Players Roster
-          </Typography>
-          <FormGroup className={classes.loginButton}>
+        {mobileDevice ? ''
+          : <Typography variant="h6" className={classes.title}>
+              LA Lakers Roster
+            </Typography>
+        }
+          <FormGroup>
             <FormControlLabel
               control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
               label={auth ? 'Logout' : 'Login'}
