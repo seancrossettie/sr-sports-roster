@@ -21,7 +21,7 @@ const PlayerForm = ({
   imageUrl,
   name,
   position,
-  number,
+  playerNumber,
   setPlayers
 }) => {
   const [player, setPlayer] = useState({
@@ -29,7 +29,7 @@ const PlayerForm = ({
     imageUrl: imageUrl || '',
     name: name || '',
     position: position || '',
-    number: number || '',
+    playerNumber: playerNumber || '',
   });
 
   const classes = useStyles();
@@ -121,7 +121,7 @@ PlayerForm.propTypes = {
   firebaseKey: PropTypes.string,
   imageUrl: PropTypes.string,
   name: PropTypes.string,
-  number: PropTypes.number,
+  playerNumber: PropTypes.number,
   position: PropTypes.string
 };
 export default PlayerForm;

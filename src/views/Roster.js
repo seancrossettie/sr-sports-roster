@@ -6,10 +6,10 @@ import PlayerCard from '../components/PlayerCards';
 function Roster({ players, setPlayers }) {
   return (
     <Grid container>
-      <Grid item direction="column" sm={2}/>
-        <Grid container direction="row" justify="space-evenly" sm={8} spacing={4}>
+      <Grid container direction="column"/>
+        <Grid container direction="row" justify="space-evenly" spacing={4}>
         {players.map((player) => (
-          <Grid item key={player.firebaseKey}>
+          <Grid item key={player.firebaseKey} sm={8}>
             <PlayerCard
               {...player}
               setPlayers={setPlayers}
@@ -17,7 +17,7 @@ function Roster({ players, setPlayers }) {
           </Grid>
         ))}
         </Grid>
-      <Grid item direction="column" sm={2}/>
+      <Grid container direction="column"/>
     </Grid>
   );
 }
