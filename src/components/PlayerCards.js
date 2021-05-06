@@ -26,7 +26,7 @@ const PlayerCard = ({
   imageUrl,
   name,
   position,
-  number,
+  playerNumber,
   setPlayers
 }) => {
   const [editing, setEditing] = useState(false);
@@ -50,12 +50,13 @@ const PlayerCard = ({
     <Card className={classes.root} key={firebaseKey}>
       {editing
         ? <PlayerForm
-          formTitle={'Edit Player Info'}
-          setPlayers={setPlayers}
-          firebaseKey={firebaseKey}
-          imageUrl={imageUrl}
-          name={name}
-          position={position}
+            formTitle={'Edit Player Info'}
+            setPlayers={setPlayers}
+            firebaseKey={firebaseKey}
+            imageUrl={imageUrl}
+            name={name}
+            position={position}
+            playerNumber={playerNumber}
           />
         : <>
             <CardActionArea>
@@ -69,7 +70,7 @@ const PlayerCard = ({
                   {name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {position} number: {number}
+                    {position} number: {playerNumber}
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -92,7 +93,7 @@ PlayerCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  playerNumber: PropTypes.number.isRequired,
   setPlayers: PropTypes.func.isRequired
 };
 
