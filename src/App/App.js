@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Grid } from '@material-ui/core';
 import { getPlayers } from '../helpers/data/rosterData';
 import Header from '../components/Header';
 import Routes from '../helpers/Routes';
@@ -28,14 +29,24 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <Routes
-        players={players}
-        user={user}
-        setPlayers={setPlayers}
-      />
-    </>
+    <div>
+      <Grid container direction="column">
+        <Grid item>
+          <Header />
+        </Grid>
+          <Grid item container>
+            <Grid item xs={false} sm={2} />
+            <Grid item xs={12} sm={8}>
+              <Routes
+              players={players}
+              user={user}
+              setPlayers={setPlayers}
+              />
+            </Grid>
+          <Grid item xs={false} sm={2} />
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 

@@ -8,6 +8,7 @@ import { createPlayer, updatePlayer } from '../helpers/data/rosterData';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    direction: 'column',
     '& > *': {
       margin: theme.spacing(1),
       width: '25ch',
@@ -55,60 +56,60 @@ const PlayerForm = ({
   };
 
   return (
-    <>
-      <Grid container direction='row'>
-          <Grid container direction='column'>
-            <Grid item>
-            <Typography gutterBottom variant="h5" component="h2">
-              {formTitle}
-            </Typography>
-            </Grid>
-        <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+    <div>
+      <Typography gutterBottom variant="h5" component="h2">
+        {formTitle}
+      </Typography>
+      <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Grid item>
           <TextField
-            label="Name"
+            label='Name'
             name='name'
             type='text'
             value={player.name}
             onChange={handleInputChange}
-            variant="outlined"
+            variant='outlined'
+            required
           />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Image Url"
-              variant="outlined"
-              name='imageUrl'
-              type='url'
-              value={player.imageUrl}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Position"
-              variant="outlined"
-              name='position'
-              type='text'
-              value={player.position}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Number"
-              variant="outlined"
-              name='playerNumber'
-              type='text'
-              value={player.playerNumber}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Button type='submit'>Submit</Button>
-        </form>
         </Grid>
-      </Grid>
-    </>
+        <Grid item>
+          <TextField
+            label='Image URL'
+            name='imageUrl'
+            type='url'
+            value={player.imageUrl}
+            onChange={handleInputChange}
+            variant='outlined'
+
+            required
+          />
+        </Grid>
+        <Grid item>
+          <TextField
+            label='Position'
+            name='position'
+            type='text'
+            value={player.position}
+            onChange={handleInputChange}
+            variant='outlined'
+
+            required
+          />
+        </Grid>
+        <Grid item>
+          <TextField
+            label='Number'
+            name='playerNumber'
+            type='number'
+            value={player.playerNumber}
+            onChange={handleInputChange}
+            variant='outlined'
+            required
+          />
+        </Grid>
+        <Button type='submit'>Submit</Button>
+      </form>
+    </div>
   );
 };
 
