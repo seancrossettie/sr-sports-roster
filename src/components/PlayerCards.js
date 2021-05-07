@@ -8,16 +8,16 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Grid } from '@material-ui/core';
 import { deletePlayer } from '../helpers/data/rosterData';
 import PlayerForm from './PlayerForm';
 
 const useStyles = makeStyles({
   root: {
-    width: 345,
-    minHeight: 460
+    height: '350px'
   },
   media: {
-    height: 300,
+    height: '150px'
   },
 });
 
@@ -68,22 +68,31 @@ const PlayerCard = ({
                 title={name}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" paragraph='true'>
                   {name}
                 </Typography>
+                <Typography variant="body1" color="textSecondary" component="p">
+                  {position}
+                </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {position} number: {playerNumber}
+                  #{playerNumber}
                 </Typography>
               </CardContent>
             </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary" onClick={() => handleButtonClick('edit')}>
-              Edit
-            </Button>
-            <Button size="small" color="primary" onClick={() => handleButtonClick('delete')}>
-              Delete
-            </Button>
-          </CardActions>
+            <Grid container>
+              <CardActions>
+                <Grid item xs={6}>
+                  <Button size="small" color="primary" onClick={() => handleButtonClick('edit')}>
+                    Edit
+                  </Button>
+                </Grid>
+                <Grid item xs={6}>
+                  <Button size="small" color="secondary" onClick={() => handleButtonClick('delete')}>
+                    Delete
+                  </Button>
+                </Grid>
+              </CardActions>
+            </Grid>
         </>
       }
     </Card>
@@ -92,12 +101,12 @@ const PlayerCard = ({
 
 PlayerCard.propTypes = {
   firebaseKey: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  playerNumber: PropTypes.number.isRequired,
   setPlayers: PropTypes.func.isRequired,
-  user: PropTypes.any.isRequired
+  user: PropTypes.any.isRequired,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  position: PropTypes.string,
+  playerNumber: PropTypes.number,
 };
 
 export default PlayerCard;
