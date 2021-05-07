@@ -11,10 +11,6 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    getPlayers().then(setPlayers);
-  }, []);
-
-  useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
         const userObj = {
@@ -24,6 +20,7 @@ function App() {
           user: authed.email.split('@')[0]
         };
         setUser(userObj);
+        getPlayers(userObj.uid).then(setPlayers);
       } else if (user || user === null) {
         setUser(false);
       }
@@ -33,11 +30,11 @@ function App() {
   return (
     <>
       <Header />
-            <Routes
-              players={players}
-              user={user}
-              setPlayers={setPlayers}
-            />
+      <Routes
+        players={players}
+        user={user}
+        setPlayers={setPlayers}
+      />
     </>
   );
 }

@@ -27,7 +27,8 @@ const PlayerCard = ({
   name,
   position,
   playerNumber,
-  setPlayers
+  setPlayers,
+  user
 }) => {
   const [editing, setEditing] = useState(false);
   const classes = useStyles();
@@ -35,8 +36,8 @@ const PlayerCard = ({
   const handleButtonClick = (type) => {
     switch (type) {
       case 'delete':
-        deletePlayer(firebaseKey)
-          .then(setPlayers);
+        deletePlayer(firebaseKey, user.uid)
+          .then((response) => setPlayers(response));
         break;
       case 'edit':
         setEditing((prevState) => !prevState);
@@ -57,6 +58,7 @@ const PlayerCard = ({
             name={name}
             position={position}
             playerNumber={playerNumber}
+            user={user}
           />
         : <>
             <CardActionArea>
@@ -94,7 +96,8 @@ PlayerCard.propTypes = {
   name: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
   playerNumber: PropTypes.number.isRequired,
-  setPlayers: PropTypes.func.isRequired
+  setPlayers: PropTypes.func.isRequired,
+  user: PropTypes.any.isRequired
 };
 
 export default PlayerCard;

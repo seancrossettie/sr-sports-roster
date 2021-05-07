@@ -22,7 +22,8 @@ const PlayerForm = ({
   name,
   position,
   playerNumber,
-  setPlayers
+  setPlayers,
+  user
 }) => {
   const [player, setPlayer] = useState({
     firebaseKey: firebaseKey || null,
@@ -30,6 +31,7 @@ const PlayerForm = ({
     name: name || '',
     position: position || '',
     playerNumber: playerNumber || '',
+    uid: user.uid
   });
 
   const classes = useStyles();
@@ -37,17 +39,17 @@ const PlayerForm = ({
   const handleInputChange = (e) => {
     setPlayer((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.name === 'playerNumber' ? Number(e.target.value) : e.target.value
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (player.firebaseKey) {
-      updatePlayer(player)
+      updatePlayer(player, user.uid)
         .then(setPlayers);
     } else {
-      createPlayer(player)
+      createPlayer(player, user.uid)
         .then(setPlayers);
     }
   };
@@ -70,7 +72,6 @@ const PlayerForm = ({
             value={player.name}
             onChange={handleInputChange}
             variant="outlined"
-            required
           />
           </Grid>
           <Grid item>
@@ -81,7 +82,6 @@ const PlayerForm = ({
               type='url'
               value={player.imageUrl}
               onChange={handleInputChange}
-              required
             />
           </Grid>
           <Grid item>
@@ -92,24 +92,21 @@ const PlayerForm = ({
               type='text'
               value={player.position}
               onChange={handleInputChange}
-              required
             />
           </Grid>
           <Grid item>
             <TextField
               label="Number"
               variant="outlined"
-              name='number'
+              name='playerNumber'
               type='text'
-              value={player.number}
+              value={player.playerNumber}
               onChange={handleInputChange}
-              required
             />
           </Grid>
           <Button type='submit'>Submit</Button>
         </form>
         </Grid>
-
       </Grid>
     </>
   );
@@ -118,6 +115,7 @@ const PlayerForm = ({
 PlayerForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
   setPlayers: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
   firebaseKey: PropTypes.string,
   imageUrl: PropTypes.string,
   name: PropTypes.string,
