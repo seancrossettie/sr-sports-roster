@@ -1,31 +1,25 @@
-# SR React Template
+# Sports Roster Project [![Netlify Status](https://api.netlify.com/api/v1/badges/3bb4e734-e16a-45b9-871e-68d42e6eaa69/deploy-status)](https://app.netlify.com/sites/sr-sports-roster/deploys)
 
-**Use this template to get up and running quickly on projects.**
+## Motivation
 
-To run, install npm
+This project was an excercise in using React to create basic a sports roster app with full CRUD. The aim was to gain a deeper understanding in React Router and integrating Firebase and Material UI.
 
-``
-npm install
-``
+## User Stories
 
-### Packages
-Included in this template are the following packages/frameworks/CDNs
-- Material UI Core
+As an authenticated user, I am able to
+- Create new players to add to my roster
+- Read all existing players
+- Update player info
+- Delete players
 
-``
-npm install @material-ui/core
-``
-- Material UI Icons
+## Technologies
+- React.js
+- React Router
+- Material UI
+- Reactstrap
+- Sass
+- Google Firebase
+- Google Auth
 
-``
-npm install @material-ui/icons
-``
-- Moment.js
-
-``
-  npm install moment --save
-``
-- Bootstrap (included)
-- Firebase Auth (included)
-
-**Before using this template, please update the .env file with you firbase info if you plan on using firebase for your project; otherwise, delete all firbase boilerplate related code to remove errors.**
+## Link to Deployed Website
+https://sr-sports-roster.netlify.app/
