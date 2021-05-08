@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Typography, Grid } from '@material-ui/core';
 import PlayerForm from '../components/PlayerForm';
 
 export default function AddPlayer({ setPlayers, user }) {
   return (
     <>
-      <PlayerForm
-        setPlayers={setPlayers}
-        user={user}
-        formTitle={'Add a Player'}
-      />
+      <Grid container>
+        <Grid item xs={12}>
+          <PlayerForm
+            setPlayers={setPlayers}
+            user={user}
+            formTitle={
+              <Typography gutterBottom variant="h2">
+                Add a Player
+              </Typography>
+            }
+          />
+        </Grid>
+      </Grid>
     </>
   );
 }

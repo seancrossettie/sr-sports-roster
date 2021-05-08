@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  TextField, Button, Grid, Typography
+  TextField, Button, Grid
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { createPlayer, updatePlayer } from '../helpers/data/rosterData';
@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     direction: 'column',
     '& > *': {
       margin: theme.spacing(1),
-      width: '25ch',
     },
   },
 }));
@@ -56,11 +55,11 @@ const PlayerForm = ({
   };
 
   return (
-    <div>
-      <Typography gutterBottom variant="h5" component="h2">
-        {formTitle}
-      </Typography>
+    <Grid container direction='column' wrap='nowrap'>
       <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <Grid item>
+          {formTitle}
+        </Grid>
         <Grid item>
           <TextField
             label='Name'
@@ -69,6 +68,7 @@ const PlayerForm = ({
             value={player.name}
             onChange={handleInputChange}
             variant='outlined'
+            fullWidth
             required
           />
         </Grid>
@@ -80,7 +80,7 @@ const PlayerForm = ({
             value={player.imageUrl}
             onChange={handleInputChange}
             variant='outlined'
-
+            fullWidth
             required
           />
         </Grid>
@@ -92,7 +92,7 @@ const PlayerForm = ({
             value={player.position}
             onChange={handleInputChange}
             variant='outlined'
-
+            fullWidth
             required
           />
         </Grid>
@@ -104,17 +104,18 @@ const PlayerForm = ({
             value={player.playerNumber}
             onChange={handleInputChange}
             variant='outlined'
+            fullWidth
             required
           />
         </Grid>
         <Button type='submit'>Submit</Button>
       </form>
-    </div>
+    </Grid>
   );
 };
 
 PlayerForm.propTypes = {
-  formTitle: PropTypes.string.isRequired,
+  formTitle: PropTypes.object.isRequired,
   setPlayers: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   firebaseKey: PropTypes.string,
