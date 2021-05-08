@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Grid container className={classes.contentWrapper}>
-        <Grid item>
+        <Grid item xs={8}>
           <Typography variant='h1'>LA Lakers Roster</Typography>
         </Grid>
       </Grid>

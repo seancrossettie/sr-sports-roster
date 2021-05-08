@@ -14,7 +14,8 @@ import PlayerForm from './PlayerForm';
 
 const useStyles = makeStyles({
   root: {
-    height: '350px'
+    minHeight: '350px',
+    minWidth: '230px'
   },
   media: {
     height: '150px'
@@ -51,7 +52,11 @@ const PlayerCard = ({
     <Card className={classes.root} key={firebaseKey}>
       {editing
         ? <PlayerForm
-            formTitle={'Edit Player Info'}
+            formTitle={
+            <Typography gutterBottom variant="h5">
+              Edit Player
+            </Typography>
+            }
             setPlayers={setPlayers}
             firebaseKey={firebaseKey}
             imageUrl={imageUrl}
@@ -68,7 +73,7 @@ const PlayerCard = ({
                 title={name}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" paragraph='true'>
+                <Typography gutterBottom variant="h5">
                   {name}
                 </Typography>
                 <Typography variant="body1" color="textSecondary" component="p">
