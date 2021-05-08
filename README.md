@@ -4,6 +4,15 @@
 
 This project was an excercise in using React to create basic a sports roster app with full CRUD. The aim was to gain a deeper understanding in React Router and integrating Firebase and Material UI.
 
+## Screenshots
+
+## Link to Deployed Website
+https://sr-sports-roster.netlify.app/
+
+## Video Walkthrough
+https://www.loom.com/share/e1f7215446854e30a845cd81ae324312
+
+
 ## User Stories
 
 As an authenticated user, I am able to
@@ -20,6 +29,4 @@ As an authenticated user, I am able to
 - Sass
 - Google Firebase
 - Google Auth
-
-## Link to Deployed Website
-https://sr-sports-roster.netlify.app/
+## 
