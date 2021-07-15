@@ -2,7 +2,10 @@
 
 ## Motivation
 
-This project was an excercise in using React to create basic a sports roster app with full CRUD. The aim was to gain a deeper understanding in React Router and integrating Firebase and Material UI. I used the LA Lakers as the mock sports team, however, this app can be used to manage other team you'd like!
+This project was an excercise in using React to create basic a sports roster app with full CRUD. The aim was to gain a deeper understanding in React Router and integrating Firebase and Material UI. I used the LA Lakers as the mock sports team, however, this app can be used to manage other team you'd like.
+
+## Link to Deployed Website
+[Sports Roster Website](https://sr-sports-roster.netlify.app/)
 
 ## Technologies
 - React.js
@@ -26,10 +29,6 @@ As an authenticated user, I am able to
 <img width="1792" alt="Screen Shot 2021-05-08 at 10 31 02 AM" src="https://user-images.githubusercontent.com/76828201/117545969-b5f87100-afed-11eb-9131-fb9ddbcbd16b.png">
 
 ![sr-sports-roster netlify app_Roster_](https://user-images.githubusercontent.com/76828201/117546025-f526c200-afed-11eb-9a36-6bb26e903d2c.png)
-
-
-## Link to Deployed Website
-[Sports Roster Website](https://sr-sports-roster.netlify.app/)
 
 ## Video Walkthrough
 https://www.loom.com/share/e1f7215446854e30a845cd81ae324312
