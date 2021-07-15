@@ -5,7 +5,7 @@
 This project was an excercise in using React to create basic a sports roster app with full CRUD. The aim was to gain a deeper understanding in React Router and integrating Firebase and Material UI. I used the LA Lakers as the mock sports team, however, this app can be used to manage other team you'd like.
 
 ## Link to Deployed Website
-[Sports Roster Website](https://sr-sports-roster.netlify.app/)
+[Sports Roster App](https://sr-sports-roster.netlify.app/)
 
 ## Technologies
 - React.js
@@ -15,8 +15,8 @@ This project was an excercise in using React to create basic a sports roster app
 - Sass
 - Google Firebase
 - Google Auth
-- ## User Stories
 
+## User Stories
 As an authenticated user, I am able to
 - Create new players to add to my roster
 - Read all existing players
